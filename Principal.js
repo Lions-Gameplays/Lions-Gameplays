@@ -91,24 +91,15 @@ function partidaJogador(){
         console.log(listar)
         rl.question('Qual o jogador venceu a partida?',(jog1)=>{
             rl.question('Qual o jogador perdeu a partida?',(jog2)=>{
-                jogador[jog1-1].pontos(+1)
-                jogador[jog2-1].pontos(-1)
+                jogador[jog1-1].pontos ++
+                jogador[jog1-1].vitoria ++
+                jogador[jog2-1].pontos --
+                jogador[jog2-1].derrota ++
             })
         })
     }
     console.log('Partida realizada!')
     exibirMenu()
-}
-function estatisticas(){
-    if(jogador==''){
-        console.log('Não há jogadores cadastrados!')
-        exibirMenu()
-    }else{
-        jogador.forEach((nome,i)=>{
-            
-        })   
-    }
-
 }
 function cadastrarJogador() {
     rl.question('Digite o nome do jogador: ', (nome) => {
