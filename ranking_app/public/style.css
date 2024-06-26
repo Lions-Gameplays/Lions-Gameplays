@@ -1,0 +1,330 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  body {
+    font-family: var(--default-font-family);
+    margin: 20px;
+    background: #000000;
+    color: #ffffff;
+  }
+  
+  h1 {
+    color: #ffa500;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #ffa500;
+  }
+  
+  button {
+    width: 217px;
+    height: 76px;
+    margin: 20px 0;
+    cursor: pointer;
+    background: #ffa500;
+    border: none;
+    border-radius: 4px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffa500;
+  }
+  
+  .main-container {
+    overflow: hidden;
+  }
+  
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container {
+    position: relative;
+    width: 1366px;
+    height: auto;
+    margin: 0 auto;
+    background: #000000;
+    overflow: hidden;
+  }
+  
+  .league-of-legends {
+    position: relative;
+    width: 67px;
+    height: 53px;
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  .rectangle {
+    position: relative;
+    width: 134px;
+    height: 8px;
+    background: #000000;
+    z-index: 1;
+  }
+  
+  .flex-row-b {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 995px;
+    height: 44px;
+    margin: 20px 0;
+    z-index: 14;
+  }
+  
+  .rectangle-1 {
+    flex-shrink: 0;
+    position: relative;
+    width: 634px;
+    height: 41px;
+    cursor: pointer;
+    background: #ffa500;
+    border: none;
+    z-index: 3;
+  }
+  
+  .player,
+  .defeats,
+  .victories,
+  .points,
+  .game {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.523px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .player {
+    height: 21px;
+    top: 12px;
+    left: 68px;
+    font-size: 14px;
+    line-height: 16.943px;
+    z-index: 4;
+  }
+  
+  .game {
+    height: 15px;
+    top: 14px;
+    left: 221px;
+    z-index: 5;
+  }
+  
+  .points {
+    height: 15px;
+    top: 14px;
+    left: 323px;
+    z-index: 6;
+  }
+  
+  .victories {
+    height: 15px;
+    top: 14px;
+    left: 416px;
+    z-index: 7;
+  }
+  
+  .defeats {
+    height: 15px;
+    top: 14px;
+    left: 522px;
+    z-index: 8;
+  }
+  
+  .rectangle-button {
+    flex-shrink: 0;
+    position: relative;
+    width: 194px;
+    height: 44px;
+    cursor: pointer;
+    background: #ffa500;
+    border: none;
+    z-index: 14;
+    border-radius: 4px;
+  }
+  
+  .criar-jogador {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 10px;
+    left: 35px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 15;
+  }
+  
+  .rectangle-button-2 {
+    position: relative;
+    width: 217px;
+    height: 76px;
+    margin: 61px 0 0 791px;
+    cursor: pointer;
+    background: #ffa500;
+    border: none;
+    z-index: 17;
+    border-radius: 4px;
+  }
+  
+  .editar-jogadores {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 148px;
+    height: 24px;
+    top: calc(50% - 28px);
+    left: calc(50% - 73.5px);
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 17;
+  }
+  
+  .latest-news {
+    position: relative;
+    width: 423px;
+    height: 22px;
+    margin: 693px 0 0 499px;
+    font-family: Inter, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.784px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 13;
+  }
+  
+  .the-latest,
+  .comma,
+  .take-a-look {
+    position: relative;
+    color: rgba(255, 255, 255, 0.64);
+    font-family: Inter, var(--default-font-family);
+    font-size: 18px;
+    line-height: 21.784px;
+    text-align: left;
+  }
+  
+  .the-latest {
+    font-weight: 800;
+  }
+  
+  .comma {
+    font-weight: 700;
+  }
+  
+  .take-a-look {
+    font-weight: 400;
+  }
+  
+  .flex-row-a {
+    position: relative;
+    width: 1392px;
+    height: 493px;
+    margin: 14px 0 0 21px;
+    z-index: 11;
+  }
+  
+  .rectangle-3 {
+    position: absolute;
+    width: 1366px;
+    height: 493px;
+    top: 0;
+    left: 26px;
+    background: #000000;
+    z-index: 10;
+  }
+  
+  .rectangle-4 {
+    position: relative;
+    width: 700px;
+    height: 384px;
+    margin: 13px 0 0 596px;
+    background: url(./assets/images/871f910f-f0c4-411b-96e1-4e404b9165de.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 12;
+  }
+  
+  .rectangle-5 {
+    position: absolute;
+    width: 611px;
+    height: 384px;
+    top: 13px;
+    left: 0;
+    background: url(./assets/images/a9b9f5ae-75f5-4c57-8a44-54b72ac58850.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 11;
+  }
+  
+  .image {
+    position: absolute;
+    width: 1370px;
+    height: 690px;
+    top: 0;
+    left: -2189px;
+    background: url(./assets/images/34e4b2a1fcdd0b3db27240dc2ef1ac59b28f43bb.png)
+      no-repeat center;
+    background-size: cover;
+    opacity: 0.9;
+  }  

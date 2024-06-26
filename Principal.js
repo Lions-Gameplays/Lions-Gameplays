@@ -21,25 +21,28 @@ function exibirMenu(){
     4.Remover Jogador;
     5.Registrar Partida;
     6.Ranking dos Jogadores;
-    7.Estátiticas;
-    8.Sair.`)
+    7.Sair.`)
     rl.question(`O que gostaria de fazer?`,(funcao)=>{
         switch(funcao){
-            case '1': cadastrarJogador()
+            case '1': 
+                cadastrarJogador()
                 break
-            case '2': listarJogadores()
+            case '2': 
+                listarJogadores()
                 break
-            case '3': editarJogador()
+            case '3': 
+                editarJogador()
                 break
-            case '4': removerJogador()
+            case '4': 
+                removerJogador()
                 break
             case '5':
+                partidaJogador()
                 break
             case '6':
+                rankingJogador()
                 break
             case '7':
-                break
-            case '8':
                 rl.close()
                 break
             default:
@@ -49,63 +52,60 @@ function exibirMenu(){
         }
     })
 }
-function rankingJogador(){
-    if(jogador==""){
-        console.log('Não há jogadores cadastrados!')
-        exibirMenu()
+function rankingJogador() {
+    if (jogador.length === 0) {
+        console.log('Não há jogadores cadastrados!');
+        exibirMenu();
     } else {
-        ranking1=jogador[0]
-        ranking2=jogador[0]
-        ranking3=jogador[0]
-        ranking4=jogador[0]
-        ranking5=jogador[0]
-        jogador.forEach((nome,i)=>{
-            if(jogador[i]>ranking1){
-                ranking1.push(jogador[i])
-            }else if (jogador[i]<ranking1 && jogador[i]>ranking2){
-                ranking2.push(jogador[i])
-            }else if (jogador[i]<ranking2 && jogador[i]>ranking3){
-                ranking3.push(jogador[i])
-            }else if (jogador[i]<ranking3 && jogador[i]>ranking4){
-                ranking4.push(jogador[i])
-            }else if (jogador[i]<ranking4 && jogador[i]>ranking5){
-                ranking5.push(jogador[i])
-            }else{
+        let ranking = jogador.slice().sort((a, b) => b.pontos - a.pontos);
+        ranking = ranking.slice(0, 5);
+        console.log("O ranking é:");
+        ranking.forEach((jog, index) => {
+            console.log(`${index + 1}º: ${jog.nome} - ${jog.pontos} pontos`);
+        });
+
+        exibirMenu();
+    }
+}
+function partidaJogador() {
+    if (jogador.length === 0) {
+        console.log('Não há jogadores cadastrados!');
+        exibirMenu();
+    } else {
+        console.log('Lista de jogadores');
+        jogador.forEach((jogador, index) => {
+            console.log(`${index + 1}. ${jogador.nome}`);
+        });
+
+        rl.question('Qual o jogador venceu a partida? (número): ', (jog1) => {
+            const vencedorIndex = parseInt(jog1) - 1;
+            if (vencedorIndex >= 0 && vencedorIndex < jogador.length) {
+                rl.question('Qual o jogador perdeu a partida? (número): ', (jog2) => {
+                    const perdedorIndex = parseInt(jog2) - 1;
+                    if (perdedorIndex >= 0 && perdedorIndex < jogador.length) {
+                        jogador[vencedorIndex].pontos++;
+                        jogador[vencedorIndex].vitoria++;
+                        jogador[perdedorIndex].pontos--;
+                        jogador[perdedorIndex].derrota++;
+                        console.log('Partida realizada!');
+                    } else {
+                        console.log("Número inválido para perdedor, retornando...");
+                    }
+                    exibirMenu();
+                });
+            } else {
+                console.log("Número inválido para vencedor, retornando...");
+                exibirMenu();
             }
-        })
-        console.log(`
-            O ranking é:
-            1º:${ranking1}
-            2º:${ranking2}
-            3º:${ranking3}
-            4º:${ranking4}
-            5º:${ranking5}`)
-        exibirMenu()
+        });
     }
 }
-function partidaJogador(){
-    if(jogador==''){
-        console.log('Não há jogadores cadastrados!')
-        exibirMenu()
-    }else{
-        console.log(listar)
-        rl.question('Qual o jogador venceu a partida?',(jog1)=>{
-            rl.question('Qual o jogador perdeu a partida?',(jog2)=>{
-                jogador[jog1-1].pontos ++
-                jogador[jog1-1].vitoria ++
-                jogador[jog2-1].pontos --
-                jogador[jog2-1].derrota ++
-            })
-        })
-    }
-    console.log('Partida realizada!')
-    exibirMenu()
-}
+
 function cadastrarJogador() {
     rl.question('Digite o nome do jogador: ', (nome) => {
         rl.question('Digite o jogo do jogador: ', (jogo) => {
             rl.question('Digite os pontos do jogador: ', (pontos) =>{
-                jogador.push({nome: nome, jogo: jogo, pontos: parseInt(pontos)})
+                jogador.push({nome: nome, jogo: jogo, pontos: parseInt(pontos), vitoria: 0 , derrota: 0})
                 console.log('Jogador cadastrado com sucesso!')
                 exibirMenu()
             })
@@ -145,6 +145,9 @@ function listarJogadores() {
                             })
                         })
                     })
+                }else{
+                    console.log('Numero não reconhecido,retornando...')
+                    exibirMenu()
                 }
             })
         }
@@ -154,12 +157,11 @@ function listarJogadores() {
             console.log('Não há jogadores para remover.')
             exibirMenu()
         } else {
-            for ( let i = 0; i < jogador.length; i++) {
                 console.log('Lista de Jogadores:')
                 jogador.forEach((jogador, index) => {
                     console.log(`${index + 1}. ${jogador.nome}`)
                 })
-                rl.question('Digite o jogador que deaseja remover: ', (remover) => {
+                rl.question('Digite o jogador que deseja remover: ', (remover) => {
                     if(remover > 0 && remover<= jogador.length) {
                         jogador.splice (remover -1, 1)
                         console.log('Jogador removido com sucesso!')
@@ -168,7 +170,6 @@ function listarJogadores() {
                         console.log('Opção Inválida, digite novamente.')
                         exibirMenu()
                     }
-                })
-            }
+            })
         }
     }
