@@ -8,7 +8,6 @@ const rl = readline.createInterface({
 let jogador = [] //nome,jogo,pontos CRUD
 let ranking = [] //baseado nos pontos
 let partidas = [] //quem ganhou,quem perdeu, ganhou +1 perdeu -1
-let estatisticas = [] //vitórias,derrotas de cada 1
 
 exibirMenu()
 

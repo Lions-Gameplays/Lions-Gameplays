@@ -17,7 +17,6 @@ Este projeto é um sistema de gerenciamento de jogadores que permite criar, list
 - **jogador**: Array que armazena os jogadores com suas informações (nome, jogo, pontos, vitórias, derrotas).
 - **ranking**: Array que será usado para exibir o ranking dos jogadores com base nos pontos.
 - **partidas**: Array que registra as partidas realizadas entre os jogadores.
-- **estatisticas**: Array que armazena as estatísticas de vitórias e derrotas de cada jogador.
 
 ## Como Usar
 
