@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking de Jogadores</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lions Gameplays</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Ranking de Jogadores</h1>
-    <div id="ranking"></div>
-    <button><a href="criar.html">Criar Jogador</a></button>
-    <button><a href="editar.html">Editar Jogador</a></button>
-    <button><a href="partidas.html">Registrar Partida</a></button>
+    <div class="main-container">
+        <div class="rectangle"></div>
+        <div class="flex-row-b">
+          <button class="rectangle-1">
+            <span class="player">Jogador</span>
+            <span class="game">Jogo</span>
+            <span class="defeats">Derrotas</span>
+            <span class="victories">Vitórias</span>
+            <span class="points">Pontos</span>
+</button>
+        </div>
+        </div>
+        <div id="ranking" class="ranking"></div>
+            <button class="rectangle-button">
+                <span class="criar-jogador"><a href="criar.html">Criar Jogador</a></span>
+            </button>
+            <button class="rectangle-button">
+                <span class="editar-jogadores"><a href="editar.html">Editar Jogadores</a></span>
+            </button>
+        <button class="rectangle-button">
+            <span class="registrar-partida"><a href="partidas.html">Registrar partidas</a></span>
+        </button>
+        <button class="rectangle-button">
+            <span class="torneio"><a href="torneio.html">Torneio</a></span>
+        </button>
     <script src="scripts.js"></script>
 </body>
 </html>

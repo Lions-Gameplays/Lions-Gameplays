@@ -3,13 +3,55 @@
     "nome": "Gabriel Soares de Ol",
     "jogo": "Mortal Kombat 1",
     "pontos": 1,
-    "vitorias": 0,
-    "derrotas": 0
+    "vitorias": 1,
+    "derrotas": 1
   },
   {
     "nome": "Murilo Estagiário",
     "jogo": "Mortal Kombat 1",
+    "pontos": 2,
+    "vitorias": 1,
+    "derrotas": 0
+  },
+  {
+    "nome": "Igor",
+    "jogo": "Mortal Kombat 1",
+    "pontos": -1,
+    "vitorias": 0,
+    "derrotas": 1
+  },
+  {
+    "nome": "Guilherme",
+    "jogo": "Mortal Kombat 1",
+    "pontos": -1,
+    "vitorias": 0,
+    "derrotas": 1
+  },
+  {
+    "nome": "Eduardo",
+    "jogo": "Mortal Kombat 1",
     "pontos": 1,
+    "vitorias": 1,
+    "derrotas": 0
+  },
+  {
+    "nome": "Gabriel L",
+    "jogo": "Mortal Kombat 1",
+    "pontos": 0,
+    "vitorias": 0,
+    "derrotas": 0
+  },
+  {
+    "nome": "Bruno",
+    "jogo": "Mortal Kombat 1",
+    "pontos": 0,
+    "vitorias": 0,
+    "derrotas": 0
+  },
+  {
+    "nome": "Enzo",
+    "jogo": "Mortal Kombat 1",
+    "pontos": 0,
     "vitorias": 0,
     "derrotas": 0
   }

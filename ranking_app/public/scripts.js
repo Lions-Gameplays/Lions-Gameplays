@@ -115,3 +115,68 @@ function populateJogadoresDropdown() {
             });
         });
 }
+function iniciarTorneio() {
+    const select = document.getElementById('jogadores');
+    const selectedJogadores = Array.from(select.selectedOptions).map(option => option.value);
+
+    if (selectedJogadores.length < 2) {
+        alert('Selecione pelo menos dois jogadores para iniciar o torneio.');
+        return;
+    }
+
+    const partidas = gerarPartidasAleatorias(selectedJogadores);
+    mostrarPartidas(partidas);
+}
+
+function gerarPartidasAleatorias(jogadores) {
+    jogadores = shuffleArray(jogadores);
+    const partidas = [];
+
+    while (jogadores.length > 1) {
+        const jogador1 = jogadores.pop();
+        const jogador2 = jogadores.pop();
+        partidas.push([jogador1, jogador2]);
+    }
+
+    return partidas;
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function mostrarPartidas(partidas) {
+    const torneioDiv = document.getElementById('torneio');
+    torneioDiv.innerHTML = '';
+
+    partidas.forEach((partida, index) => {
+        const partidaDiv = document.createElement('div');
+        partidaDiv.innerHTML = `
+            <p>Partida ${index + 1}: ${partida[0]} vs ${partida[1]}</p>
+            <button onclick="registrarResultado(${index}, ${partida[0]}, ${partida[1]}, true)">Vencedor: ${partida[0]}</button>
+            <button onclick="registrarResultado(${index}, ${partida[0]}, ${partida[1]}, false)">Vencedor: ${partida[1]}</button>
+        `;
+        torneioDiv.appendChild(partidaDiv);
+    });
+}
+
+function registrarResultado(partidaIndex, jogador1, jogador2, jogador1Venceu) {
+    const vencedor = jogador1Venceu ? jogador1 : jogador2;
+    const perdedor = jogador1Venceu ? jogador2 : jogador1;
+
+    fetch('/partidas', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ vencedor: parseInt(vencedor), perdedor: parseInt(perdedor) }),
+    }).then(() => {
+        // Atualiza as partidas do torneio
+        const torneioDiv = document.getElementById('torneio');
+        torneioDiv.children[partidaIndex].innerHTML = `<p>Partida ${partidaIndex + 1} - Vencedor: ${vencedor}</p>`;
+    });
+}

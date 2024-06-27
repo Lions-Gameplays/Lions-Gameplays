@@ -1,0 +1,126 @@
+body {
+  background-image: url('mk1.jpg');
+  background-size: cover;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+label {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  display: inline-block;
+}
+select {
+  width: 200px;
+  margin-bottom: 10px;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+#chaves {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#chaves div {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  width: 300px;
+  text-align: center;
+}
+#chaves p {
+  margin: 0 0 10px 0;
+}
+#chaves button {
+  background-color: #28a745;
+  margin: 5px;
+}
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px;
+  padding: 20px;
+}
+
+.rectangle-1 {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  margin: 0px;
+}
+
+.rectangle-1 span {
+  flex-shrink: 0;
+  width: 100px;
+  text-align: center;
+}
+
+.ranking {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px;
+  margin: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.rectangle-button{
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px;
+  display: inline-block;
+}
+
+.rectangle-button a{
+  color: white;
+  text-decoration: none;
+}
+
+.flex-row-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 1000px;
+  height: 20px;
+  margin: 5px 0 0 0;
+  z-index: auto;
+}

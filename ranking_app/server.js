@@ -71,17 +71,16 @@ app.delete('/jogadores/:id', (req, res) => {
 
 app.post('/partidas', (req, res) => {
     const { vencedor, perdedor } = req.body;
-    if (vencedor >= 0 && vencedor < jogadores.length && perdedor >= 0 && perdedor < jogadores.length) {
-        jogadores[vencedor].pontos++;
-        jogadores[vencedor].vitorias++;
-        jogadores[perdedor].pontos--;
-        jogadores[perdedor].derrotas++;
-        saveData();
-        res.status(201).send('Partida registrada com sucesso.');
+    console.log('Recebido nova partida:', req.body);
+  
+    if (vencedor && perdedor) {
+      partidas.push({ vencedor, perdedor });
+      res.status(201).send('Partida registrada');
     } else {
-        res.status(400).send('IDs de jogador inválidos.');
+      res.status(400).send('Dados incompletos');
     }
-});
+  });
+  
 
 app.get('/ranking', (req, res) => {
     const ranking = [...jogadores].sort((a, b) => b.pontos - a.pontos);
